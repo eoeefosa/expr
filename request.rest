@@ -1,0 +1,43 @@
+# POST http://127.0.0.1:3000/register HTTP/1.1
+# content-type: application/json
+
+# {
+#    "username":"eoeefosa",
+#    "password":"emmanuel",
+#    "email": "eoeeofsa@gmail.com",
+#    "WhatsappNumber":"081474443220"
+# }
+
+# POST http://127.0.0.1:3000/user/register HTTP/1.1
+# content-type: application/json
+
+# {
+#    "name":"eoeefosa",
+#    "email":"eoeefosa78@gmail.com",
+#    "password":"emmanuel"
+# }
+
+
+
+# GET  http://127.0.0.1:3000/user/people HTTP/1.1
+# POST http://127.0.0.1:3000/course/createCourse HTTP/1.1
+# content-type: application/json
+
+# {
+#    "title":"pharmacology"
+# }
+
+#  GET  http://127.0.0.1:3000/course/courses HTTP/1.1
+# DELETE  http://127.0.0.1:3000/course/deleteCourse HTTP/1.1
+# content-type: application/json
+
+# {
+#    "title":"pharmacology"
+# }
+
+POST http://127.0.0.1:3000/course/course HTTP/1.1
+content-type: application/json
+
+{
+   "title":"Chemical"
+}
