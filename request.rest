@@ -45,6 +45,14 @@
 #  POST http://127.0.0.1:3000/bquestion/question HTTP/1.1
 # content-type: application/json
 
+# #  {
+# #     "question": "God called forth the birds of the air from the ______.",
+# #     "options": ["Waters", "Ground", "Sky", "Trees"],
+# #     "answer": "Waters",
+# #     "BR": "Genesis 1:20",
+# #     "level": 1
+# #   }
+
 # {
 #     "question": "What was the first thing God made?",
 #     "options": ["Man", "Birds", "Light", "Seas"],
@@ -62,5 +70,17 @@ DELETE  http://127.0.0.1:3000/bquestion/question HTTP/1.1
   content-type: application/json
 
 {
- "id": "65f7c860aa0b916af3f1899c"
+ "id": "65f7c870aa0b916af3f1899e"
 }
+
+#  PUT  http://127.0.0.1:3000/bquestion/question HTTP/1.1
+# content-type: application/json
+
+#  {
+#   "id": "65f7c860aa0b916af3f1899c",
+#     "question": "God called forth the birds of the air from the ______.",
+#     "options": ["Waters", "Ground", "Sky", "Trees"],
+#     "answer": "Waters",
+#     "BR": "Genesis 1:20",
+#     "level": 1
+#   }

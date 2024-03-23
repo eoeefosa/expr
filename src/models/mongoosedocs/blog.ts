@@ -1,6 +1,6 @@
 import mongoose, { Schema, Document } from "mongoose";
 
-export interface IBloge extends Document {
+export interface IBlog extends Document {
   title: string;
   author: string;
   body: string;
@@ -13,7 +13,7 @@ export interface IBloge extends Document {
 }
 
 const BlogSchema = new Schema({
-  title: String,
+  title: { type: String, unique: true },
   author: String,
   body: String,
   comment: [{ body: String, date: Date }],
@@ -24,5 +24,20 @@ const BlogSchema = new Schema({
     favs: Number,
   },
 });
-
-export default mongoose.model<IBloge>("Blog", BlogSchema);
+/**
+ * ```
+ *  const BlogSchema = new Schema({
+ *  title: String,
+ *  author: String,
+ *  body: String,
+ *  comment: [{ body: String, date: Date }],
+ *  date: { type: Date, default: Date.now },
+ *  hidden: Boolean,
+ *  meta: {
+ *   vote: Number,
+ *   favs: Number,
+ *  },
+ * });```
+ */
+export default mongoose.model<IBlog>("Blog", BlogSchema);
+// module.export =Blog

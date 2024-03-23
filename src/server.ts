@@ -5,6 +5,8 @@ import cors from "cors";
 import userRoutes from "./routes/userRoutes";
 import courseRoutes from "./routes/courseRoutes";
 import bquestionRoute from "./routes/bqquestionsRoutes";
+import socialRoutes from "./routes/socialRoutes";
+import recipeRoute from "./routes/recipeRoutes"
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,6 +16,8 @@ app.use(express.json());
 app.use("/user", userRoutes);
 app.use("/course", courseRoutes);
 app.use("/bquestion", bquestionRoute);
+app.use("/social", socialRoutes)
+app.use("/recipe", recipeRoute)
 
 mongoose
   .connect(process.env.MONGODB_URL || "mongodb://0.0.0.0:27017/")
