@@ -66,21 +66,21 @@
 
 
 
-DELETE  http://127.0.0.1:3000/bquestion/question HTTP/1.1
-  content-type: application/json
+# DELETE  http://127.0.0.1:3000/bquestion/question HTTP/1.1
+#   content-type: application/json
 
-{
- "id": "65f7c870aa0b916af3f1899e"
-}
+# {
+#  "id": "65f7c870aa0b916af3f1899e"
+# }
 
-#  PUT  http://127.0.0.1:3000/bquestion/question HTTP/1.1
-# content-type: application/json
+PUT  http://127.0.0.1:3000/bquestion/question HTTP/1.1
+content-type: application/json
 
-#  {
-#   "id": "65f7c860aa0b916af3f1899c",
-#     "question": "God called forth the birds of the air from the ______.",
-#     "options": ["Waters", "Ground", "Sky", "Trees"],
-#     "answer": "Waters",
-#     "BR": "Genesis 1:20",
-#     "level": 1
-#   }
+ {
+  "id": "65f7c860aa0b916af3f1899c",
+    "question": "God called forth the birds of the air from the ______.",
+    "options": ["Waters", "Ground", "Sky", "Trees"],
+    "answer": "Waters",
+    "BR": "Genesis 1:20",
+    "level": 1
+  }

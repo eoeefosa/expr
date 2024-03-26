@@ -37,30 +37,35 @@ export const postaQuestion = async (req: Request, res: Response) => {
 export const postQuestions = async (req: Request, res: Response) => {};
 // Update question {}
 export const updatequestion = async (req: Request, res: Response) => {
-  const { id, userid, Upquestion, Upoptions, Upanswers } = req.body;
-  const existingquestion = await Bqquestion.findOne(id);
-  if (!existingquestion) {
-    return res.status(400).json({ error: "Question not found" });
-  }
-  const updatedquestion = await Bqquestion.findByIdAndUpdate(
-    id,
-    {
-      question: Upquestion,
-      options: Upoptions,
-      answers: Upanswers,
-    },
-    {
-      new: true,
+  try {
+    const { id, userid, Upquestion, Upoptions, Upanswers } = req.body;
+    const existingquestion = await Bqquestion.findOne(id);
+    if (!existingquestion) {
+      return res.status(400).json({ error: "Question not found" });
     }
-  );
+    const updatedquestion = await Bqquestion.findByIdAndUpdate(
+      id,
+      {
+        question: Upquestion,
+        options: Upoptions,
+        answers: Upanswers,
+      },
+      {
+        new: true,
+      }
+    );
 
-  if (!updatedquestion) {
-    return res.status(500).json({ error: "Question not updated" });
+    if (!updatedquestion) {
+      return res.status(500).json({ error: "Question not updated" });
+    }
+    return res.json({
+      message: "Question updated successfully",
+      data: updatedquestion,
+    });
+  } catch (error) {
+    // console.log(error);
+
   }
-  return res.json({
-    message: "Question updated successfully",
-    data: updatedquestion,
-  });
 };
 // update questions []
 // delete questions[]
